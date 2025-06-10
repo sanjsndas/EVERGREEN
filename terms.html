@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Service - Ever Green Gardening</title>
+  <style>
+    /* CSS Variables for Theme */
+    :root {
+      --forest-green-dark: #1b3a2f;
+      --forest-green: #2c5d3f;
+      --forest-green-light: #4a7c59;
+      --flower-pink: #e6a8b7;
+      --flower-yellow: #f0d96f;
+      --flower-light: #fff0f5;
+      --text-gray: #555753;
+      --text-muted: #6b7280;
+      --bg-light: #ffffff;
+      --rounded: 0.75rem;
+      --shadow-light: 0 4px 12px rgba(44, 93, 63, 0.12);
+      --transition-speed: 0.3s;
+      --max-width: 1200px;
+      --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      background: var(--bg-light);
+      min-height: 100vh;
+      overflow-y: scroll;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: var(--forest-green-dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-speed);
+    }
+    a:hover, a:focus {
+      color: var(--flower-pink);
+      outline: none;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      color: var(--forest-green-dark);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 3.5rem;
+      padding-top: 5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2.25rem;
+      padding-top: 4rem;
+      border-left: 5px solid var(--flower-pink);
+      padding-left: 1rem;
+      margin-top: 3rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+    }
+    p {
+      margin-bottom: 1.2rem;
+      max-width: 850px;
+      color: var(--text-muted);
+      text-align: justify;
+    }
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.6rem;
+      color: var(--text-muted);
+      list-style: disc inside;
+    }
+    li {
+      margin-bottom: 0.85rem;
+    }
+    pre {
+      background: var(--flower-light);
+      padding: 1rem 1.25rem;
+      border-radius: var(--rounded);
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    /* Header */
+    header {
+      background: var(--forest-green);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(11, 38, 20, 0.6);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-width);
+      padding: 1rem 1.5rem;
+      margin: 0 auto;
+    }
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.7rem;
+      color: var(--flower-yellow);
+      letter-spacing: 1.6px;
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+      cursor: default;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    nav .nav-links a {
+      color: var(--flower-yellow);
+      font-weight: 600;
+      padding: 0.3rem 0.6rem;
+      position: relative;
+      transition: color var(--transition-speed);
+    }
+    nav .nav-links a:hover,
+    nav .nav-links a:focus {
+      color: var(--flower-pink);
+    }
+    nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--flower-pink);
+      transition: width var(--transition-speed);
+    }
+    nav .nav-links a:hover::after,
+    nav .nav-links a:focus::after {
+      width: 100%;
+    }
+    /* Hero Section */
+    .hero {
+      max-width: var(--max-width);
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+      text-align: center;
+      color: var(--forest-green-dark);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      max-width: 640px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    /* Content Sections */
+    section {
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #eaeaea;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    section:last-child {
+      border-bottom: none;
+      padding-bottom: 5rem;
+    }
+    /* Footer */
+    footer {
+      background: var(--forest-green);
+      color: var(--flower-yellow);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 1rem;
+      user-select: none;
+      margin-top: 2rem;
+      box-shadow: inset 0 6px 12px #1b3a2f;
+    }
+    footer a {
+      color: var(--flower-pink);
+      text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 2.75rem;
+        padding-top: 3rem;
+      }
+      h2 {
+        font-size: 1.9rem;
+        padding-top: 2.5rem;
+        margin-top: 2rem;
+      }
+      h3 {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+      }
+      nav .nav-links {
+        gap: 1rem;
+      }
+      .hero p {
+        font-size: 1rem;
+        max-width: 90vw;
+      }
+      section {
+        padding-bottom: 2rem;
+      }
+      footer {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Primary Navigation">
+      <div class="logo" aria-label="Ever Green Gardening logo">Ever Green Gardening</div>
+      <div class="nav-links">
+   <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0"aria-current="page">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container" role="main" aria-label="Terms of Service content">
+    <h1>Terms of Service</h1>
+    <div class="hero">
+      <p>Welcome to Ever Green Gardening's Terms of Service. These terms outline the rules and regulations for the use of our website and services. We ask that you read through these Terms carefully before using our services. Your access and use constitute acceptance and agreement to be bound by these terms.</p>
+      <p>This document is intended to establish a clear understanding of your rights and responsibilities while protecting both you and Ever Green Gardening from misuse and disputes. We strive for transparency and fairness in all transactions.</p>
+    </div>
+
+    <section id="acceptance-of-terms" aria-labelledby="acceptance-of-terms-heading">
+      <h2 id="acceptance-of-terms-heading">1. Acceptance of Terms</h2>
+      <p>By accessing or using our website, mobile applications, or procuring any services offered by Ever Green Gardening, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, along with any amendments made from time to time.</p>
+      <p>If you do not agree to these Terms, please do not use our services or access our digital platforms.</p>
+      <p>These terms apply to all visitors, users, customers, and others who interact with our services.</p>
+    </section>
+
+    <section id="changes-to-terms" aria-labelledby="changes-to-terms-heading">
+      <h2 id="changes-to-terms-heading">2. Changes to Terms</h2>
+      <p>Ever Green Gardening reserves the right to modify or update these Terms of Service at any time without prior notice. Changes will become effective once posted on this website.</p>
+      <p>We encourage you to review these terms regularly to stay informed about your rights and obligations.</p>
+      <p>Your continued use of our services or website after changes indicates your acceptance of the updated terms.</p>
+      <p>Significant changes that materially affect you may be communicated directly via email or prominent website notices.</p>
+    </section>
+
+    <section id="services-description" aria-labelledby="services-description-heading">
+      <h2 id="services-description-heading">3. Description of Services</h2>
+      <p>Ever Green Gardening offers comprehensive gardening, landscaping, and plant care services including but not limited to garden design, lawn maintenance, pruning, pest control, and irrigation solutions.</p>
+      <p>All services are described on our website with indicative pricing and terms. Custom quotes may be provided upon individual requests and site visits.</p>
+      <p>We endeavor to deliver high-quality, reliable, and timely services tailored to the client’s needs and site specific conditions.</p>
+      <p>Service availability, scope, and pricing are subject to change and dependent on factors such as location, seasonality, and regulatory compliance.</p>
+    </section>
+
+    <section id="service-procurement" aria-labelledby="service-procurement-heading">
+      <h2 id="service-procurement-heading">4. Service Procurement and Contracts</h2>
+      <p>When you decide to utilize our services, either online or in-person, a binding service contract or agreement will be established outlining the scope, price, schedule, and deliverables.</p>
+      <p>Contracts may be verbal for small jobs or documented in writing for significant projects, depending on the circumstances and client preference.</p>
+      <p>By confirming services, you agree to provide access, accurate information, and cooperation necessary for fulfilling the contract.</p>
+      <p>Any additional services or changes requested during the contract period may result in supplementary charges and require mutual agreement.</p>
+      <p>We reserve the right to refuse or terminate service contracts that involve illegal activities, unsafe conditions, or violations of regulatory policies.</p>
+    </section>
+
+    <section id="payment-terms" aria-labelledby="payment-terms-heading">
+      <h2 id="payment-terms-heading">5. Payment Terms</h2>
+      <p>Unless otherwise stated, all service fees are payable as agreed in the contract or quote prior to or upon delivery.</p>
+      <p>We accept payment via authorized methods including credit/debit cards, bank transfer, and other agreed mechanisms.</p>
+      <p>Invoices are issued reflecting all agreed charges and are due within specified terms (typically 14 or 30 days).</p>
+      <p>Late payments may incur interest or service suspension according to applicable laws and contract terms.</p>
+      <p>If payment issues arise, please contact us promptly to arrange alternative solutions.</p>
+    </section>
+
+    <section id="cancellations-rescheduling" aria-labelledby="cancellations-rescheduling-heading">
+      <h2 id="cancellations-rescheduling-heading">6. Cancellations and Rescheduling</h2>
+      <p>Clients may cancel or reschedule services by providing advance notice as specified in the contract or a minimum of 24 hours where not otherwise detailed.</p>
+      <p>For last-minute cancellations or no-shows, a cancellation fee may apply to cover incurred costs and lost opportunities.</p>
+      <p>We reserve the right to reschedule due to unforeseen circumstances such as inclement weather, staff availability, or emergency conditions.</p>
+      <p>Any adjustments will be communicated promptly, and we strive to minimize inconvenience.</p>
+    </section>
+
+    <section id="service-warranties" aria-labelledby="service-warranties-heading">
+      <h2 id="service-warranties-heading">7. Service Warranties and Guarantees</h2>
+      <p>We strive to deliver all services professionally and to the highest standards. Our warranties are limited to correcting any defects or issues arising from our workmanship within a reasonable period after service delivery.</p>
+      <p>We do not warrant plant growth, pest eradication results, or outcomes affected by external factors such as weather, soil conditions, or client maintenance.</p>
+      <p>Any warranty claims must be reported promptly with supporting details, allowing us the opportunity to assess and resolve the issue fairly.</p>
+    </section>
+
+    <section id="liability" aria-labelledby="liability-heading">
+      <h2 id="liability-heading">8. Limitation of Liability</h2>
+      <p>Ever Green Gardening shall not be liable for any direct, indirect, incidental, consequential, or punitive damages resulting from your use or inability to use our services except as mandated by law.</p>
+      <p>This limitation applies to damages arising from delays, plant conditions, property damage not caused by our negligence, or any unforeseen circumstances.</p>
+      <p>Clients are responsible for maintaining garden and property safety and disclosing any hazards prior to service.</p>
+      <p>Our total liability, whether in contract, tort, or otherwise, shall not exceed the fees paid for the specific service giving rise to the claim.</p>
+    </section>
+
+    <section id="intellectual-property" aria-labelledby="intellectual-property-heading">
+      <h2 id="intellectual-property-heading">9. Intellectual Property</h2>
+      <p>All content on our website including text, graphics, logos, images, and software is the property of Ever Green Gardening or licensed third parties and protected by applicable intellectual property laws.</p>
+      <p>You may not reproduce, distribute, modify, or create derivative works from our content without prior written permission.</p>
+      <p>Any ideas, suggestions, or feedback shared with us become our property to utilize without obligation.</p>
+    </section>
+
+    <section id="user-conduct" aria-labelledby="user-conduct-heading">
+      <h2 id="user-conduct-heading">10. User Conduct</h2>
+      <p>By using our services and website, you agree to comply with all applicable laws and refrain from actions that may harm others or interfere with our operations.</p>
+      <p>Prohibited conduct includes but is not limited to:</p>
+      <ul>
+        <li>Using services for unlawful or fraudulent purposes.</li>
+        <li>Disrupting or degrading service availability.</li>
+        <li>Attempting unauthorized access to systems or data.</li>
+        <li>Posting harmful or offensive content where applicable.</li>
+      </ul>
+      <p>Violations may result in termination of service and legal action.</p>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">11. Privacy</h2>
+      <p>Your privacy is important to us. Our <a href="privacy.html">Privacy Policy</a> governs how we collect, use, and protect your personal data. By agreeing to these Terms, you also agree to the practices described in our Privacy Policy.</p>
+    </section>
+
+    <section id="third-party-links" aria-labelledby="third-party-links-heading">
+      <h2 id="third-party-links-heading">12. Third-Party Links and Services</h2>
+      <p>Our website or services may contain links to third-party websites or services that are not controlled by Ever Green Gardening. We are not responsible for the content, privacy policies, or practices of any third parties.</p>
+      <p>Use of third-party sites is at your own risk, and we encourage you to review their terms and privacy policies.</p>
+    </section>
+
+    <section id="indemnification" aria-labelledby="indemnification-heading">
+      <h2 id="indemnification-heading">13. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Ever Green Gardening, its affiliates, officers, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses arising out of your violation of these Terms or misuse of our services.</p>
+      <p>This includes any third-party claims resulting from your actions.</p>
+    </section>
+
+    <section id="termination" aria-labelledby="termination-heading">
+      <h2 id="termination-heading">14. Termination</h2>
+      <p>We reserve the right to suspend or terminate your access to our services immediately without prior notice if you breach any of these Terms.</p>
+      <p>Termination does not limit any other remedies available at law or equity.</p>
+      <p>Any provisions intended to survive termination, such as confidentiality and liability limitations, shall remain in effect.</p>
+    </section>
+
+    <section id="governing-law" aria-labelledby="governing-law-heading">
+      <h2 id="governing-law-heading">15. Governing Law and Jurisdiction</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflicts of law principles.</p>
+      <p>You agree that any disputes arising out of or in connection with these Terms or services shall be subject to the exclusive jurisdiction of the courts located in New York County, New York.</p>
+    </section>
+
+    <section id="dispute-resolution" aria-labelledby="dispute-resolution-heading">
+      <h2 id="dispute-resolution-heading">16. Dispute Resolution</h2>
+      <p>In the event of any dispute, controversy, or claim arising out of or relating to these Terms, the parties agree to first attempt to resolve the matter amicably through informal negotiations.</p>
+      <p>If resolution cannot be reached within 30 days, the dispute may be submitted to mediation or arbitration in accordance with the applicable laws.</p>
+      <p>This process aims to avoid costly litigation and encourage fair settlements.</p>
+    </section>
+
+    <section id="limitations" aria-labelledby="limitations-heading">
+      <h2 id="limitations-heading">17. Limitations on Use</h2>
+      <p>You agree not to use our services in any manner that:</p>
+      <ul>
+        <li>Violates any applicable national or international law or regulation.</li>
+        <li>Infringes on any intellectual property rights.</li>
+        <li>Introduces malicious software or viruses.</li>
+        <li>Interferes with the integrity or performance of our services.</li>
+        <li>Attempts to gain unauthorized access to systems or data.</li>
+      </ul>
+      <p>Violations may result in criminal or civil liability.</p>
+    </section>
+
+    <section id="intellectual-property-rights" aria-labelledby="intellectual-property-rights-heading">
+      <h2 id="intellectual-property-rights-heading">18. Intellectual Property Rights</h2>
+      <p>All content provided on Ever Green Gardening's website, including logos, graphics, text, and software, is owned by or licensed to Ever Green Gardening.</p>
+      <p>You are granted a limited, non-exclusive license to access and use the content for personal, non-commercial purposes while complying with these Terms.</p>
+      <p>Any unauthorized use or reproduction is strictly prohibited and may result in legal action.</p>
+    </section>
+
+    <section id="user-generated-content" aria-labelledby="user-generated-content-heading">
+      <h2 id="user-generated-content-heading">19. User-Generated Content</h2>
+      <p>If you submit content such as reviews, comments, or suggestions, you grant Ever Green Gardening a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, and display such content within our business operations.</p>
+      <p>You represent and warrant that any content you provide will not infringe on third-party rights, is lawful, and does not contain harmful or inappropriate material.</p>
+      <p>We reserve the right to remove or edit user content at our discretion.</p>
+    </section>
+
+    <section id="disclaimer-of-warranties" aria-labelledby="disclaimer-of-warranties-heading">
+      <h2 id="disclaimer-of-warranties-heading">20. Disclaimer of Warranties</h2>
+      <p>Ever Green Gardening provides all services and content on an "as is" and "as available" basis without express or implied warranties.</p>
+      <p>We disclaim all warranties including but not limited to merchantability, fitness for a particular purpose, non-infringement, and accuracy of information.</p>
+      <p>We do not guarantee uninterrupted or error-free service and disclaim liability for damages arising from use.</p>
+    </section>
+
+    <section id="limitation-of-liability" aria-labelledby="limitation-of-liability-heading">
+      <h2 id="limitation-of-liability-heading">21. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, Ever Green Gardening shall not be liable for any direct, indirect, incidental, consequential, special, or punitive damages arising out of or relating to your use of our services or website.</p>
+      <p>This includes lost profits, data loss, or business interruption, even if advised of the possibility of such damages.</p>
+      <p>Your sole remedy is to discontinue use of our services.</p>
+    </section>
+
+    <section id="indemnity" aria-labelledby="indemnity-heading">
+      <h2 id="indemnity-heading">22. Indemnity</h2>
+      <p>You agree to indemnify, defend, and hold harmless Ever Green Gardening and its affiliates, officers, employees, and agents from any claims, damages, liabilities, or expenses arising from your breach of these Terms or misuse of our services.</p>
+    </section>
+
+    <section id="severability" aria-labelledby="severability-heading">
+      <h2 id="severability-heading">23. Severability</h2>
+      <p>If any provision of these Terms is found unenforceable or invalid by a court, the remaining provisions will remain in full force and effect.</p>
+    </section>
+
+    <section id="entire-agreement" aria-labelledby="entire-agreement-heading">
+      <h2 id="entire-agreement-heading">24. Entire Agreement</h2>
+      <p>These Terms along with our Privacy Policy and any other legal notices constitute the entire agreement between you and Ever Green Gardening concerning your use of our services.</p>
+      <p>They supersede any prior agreements or understandings, oral or written.</p>
+    </section>
+
+    <section id="contact-information" aria-labelledby="contact-information-heading">
+      <h2 id="contact-information-heading">25. Contact Information</h2>
+      <p>If you have questions, concerns, or require further clarification of these Terms of Service, please contact us at:</p>
+      <address>
+        Ever Green Gardening<br />
+        371 7th Ave, New York, NY 10001<br />
+        Phone: <a href="tel:+18446778900">+1 (844) 677-8900</a><br />
+        Email: <a href="mailto:support@evergreengardening.com">support@evergreengardening.com</a>
+      </address>
+      <p>Our dedicated support team is available to assist you during normal business hours.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo" aria-label="Footer with contact information">
+    <p>📍 371 7th Ave, New York, NY 10001 | 📞 <a href="tel:+18446778900">+1 (844) 677-8900</a></p>
+    <p>© 2024 Ever Green Gardening. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

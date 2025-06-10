@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ever Green Gardening Services</title>
+  <style>
+    /* CSS Variables for Theme */
+    :root {
+      --forest-green-dark: #1b3a2f;
+      --forest-green: #2c5d3f;
+      --forest-green-light: #4a7c59;
+      --flower-pink: #e6a8b7;
+      --flower-yellow: #f0d96f;
+      --flower-light: #fff0f5;
+      --text-gray: #555753;
+      --text-muted: #6b7280;
+      --bg-light: #fafafa;
+      --rounded: 0.75rem;
+      --shadow-light: 0 4px 12px rgba(44, 93, 63, 0.12);
+      --shadow-gallery: 0 8px 24px rgba(44, 93, 63, 0.15);
+      --transition-speed: 0.3s;
+      --max-width: 1200px;
+      --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      --neutral-gray: #6b7280;
+      --white: #ffffff;
+      --black: #000000;
+    }
+
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      background: var(--bg-light);
+      min-height: 100vh;
+      overflow-y: scroll;
+    }
+    img {
+      max-width: 100%;
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-light);
+      transition: transform var(--transition-speed) ease;
+      cursor: pointer;
+      display: block;
+    }
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-gallery);
+      z-index: 2;
+      position: relative;
+    }
+    a {
+      color: var(--forest-green-dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-speed);
+    }
+    a:hover, a:focus {
+      color: var(--flower-pink);
+      outline: none;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      color: var(--forest-green-dark);
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--flower-pink);
+      padding-left: 0.75rem;
+    }
+    h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--forest-green);
+    }
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+    ul {
+      margin-left: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      list-style: disc inside;
+    }
+    /* Header */
+    header {
+      background: var(--forest-green);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(11, 38, 20, 0.5);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-width);
+      padding: 1rem 1rem;
+      margin: 0 auto;
+    }
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--flower-yellow);
+      letter-spacing: 1.5px;
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+      cursor: default;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    nav .nav-links a {
+      color: var(--flower-yellow);
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      position: relative;
+      transition: color var(--transition-speed);
+    }
+    nav .nav-links a:hover,
+    nav .nav-links a:focus {
+      color: var(--flower-pink);
+    }
+    nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--flower-pink);
+      transition: width var(--transition-speed);
+    }
+    nav .nav-links a:hover::after,
+    nav .nav-links a:focus::after {
+      width: 100%;
+    }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--forest-green-dark) 0%, var(--forest-green) 100%);
+      color: var(--flower-yellow);
+      text-align: center;
+      padding: 5rem 1rem 6rem;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      margin-bottom: 4rem;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin: 1rem auto 3rem;
+      color: var(--flower-light);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    .btn-primary {
+      background-color: var(--flower-pink);
+      border: none;
+      color: var(--forest-green-dark);
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      font-size: 1.25rem;
+      border-radius: var(--rounded);
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(230,168,183,0.5);
+      transition: all var(--transition-speed) ease;
+      user-select: none;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: var(--flower-yellow);
+      color: var(--forest-green-dark);
+      box-shadow: 0 12px 20px rgba(240,217,111,0.8);
+      outline: none;
+      transform: translateY(-2px);
+    }
+    /* Section spacing */
+    section {
+      padding: 3rem 0 4rem;
+    }
+    /* Cards */
+    .card {
+      background: var(--white);
+      border-radius: var(--rounded);
+      padding: 2rem;
+      box-shadow: var(--shadow-light);
+      transition: box-shadow var(--transition-speed);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .card:hover {
+      box-shadow: 0 12px 24px rgba(44, 93, 63, 0.25);
+    }
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 2.5rem;
+    }
+    /* Image with text block */
+    .img-text-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+    .img-text-block:nth-child(even) {
+      grid-template-columns: 1fr 1fr;
+      direction: rtl;
+      text-align: right;
+    }
+    .img-text-block:nth-child(even) img {
+      direction: ltr;
+    }
+    /* Pricing Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: var(--shadow-light);
+      border-radius: var(--rounded);
+      overflow: hidden;
+      background: var(--white);
+    }
+    thead {
+      background: var(--forest-green);
+      color: var(--flower-yellow);
+    }
+    th, td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid #d1d5db;
+      font-weight: 600;
+    }
+    tbody tr:hover {
+      background: var(--flower-light);
+      transition: background var(--transition-speed);
+    }
+    /* Disclaimer box */
+    .disclaimer {
+      background: var(--flower-yellow);
+      color: var(--forest-green-dark);
+      padding: 2rem 2rem 2.5rem;
+      border-radius: var(--rounded);
+      margin-top: 3rem;
+      font-style: italic;
+      box-shadow: var(--shadow-light);
+      line-height: 1.6;
+    }
+    /* Override secondary text in disclaimer paragraphs to black */
+    .disclaimer p {
+      color: var(--black);
+      font-style: normal;
+      margin-top: 0.75rem;
+      font-weight: 500;
+    }
+    /* Customer Satisfaction Section */
+    .customer-satisfaction {
+      background: var(--forest-green-light);
+      color: white;
+      padding: 4rem 1rem 4.5rem;
+      border-radius: var(--rounded);
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .customer-satisfaction h2 {
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--flower-yellow);
+    }
+    /* Override paragraphs to black for stronger contrast */
+    .customer-satisfaction p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--black);
+      background: var(--white);
+      padding: 1.8rem 2rem;
+      border-radius: var(--rounded);
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(20, 38, 10, 0.3);
+    }
+    /* Footer */
+    footer {
+      background: var(--forest-green);
+      color: var(--flower-yellow);
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 1rem;
+      user-select: none;
+      margin-top: 4rem;
+      box-shadow: inset 0 6px 12px #1b3a2f;
+    }
+    footer a {
+      color: var(--flower-pink);
+      text-decoration: underline;
+    }
+    /* Gallery Section */
+    #gallery {
+      background: var(--white);
+      padding: 4rem 0 5rem;
+    }
+    #gallery h2 {
+      border-left: 5px solid var(--flower-pink);
+      padding-left: 1rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: var(--forest-green-dark);
+      margin-bottom: 2rem;
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .gallery-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-light);
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed);
+      cursor: pointer;
+    }
+    .gallery-grid img:hover,
+    .gallery-grid img:focus {
+      transform: scale(1.07);
+      box-shadow: var(--shadow-gallery);
+      outline: none;
+      z-index: 5;
+      position: relative;
+    }
+    /* Responsive gallery */
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .img-text-block {
+        grid-template-columns: 1fr;
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      .img-text-block:nth-child(even) {
+        grid-template-columns: 1fr !important;
+      }
+      nav .nav-links {
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .customer-satisfaction h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Primary Navigation">
+      <div class="logo" aria-label="Ever Green Gardening logo">Ever Green Gardening</div>
+      <div class="nav-links">
+       <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" role="banner" aria-label="Introduction to Ever Green Gardening">
+      <h1>Your Dream Garden, Naturally Flourishing</h1>
+      <p>We bring nature's lush beauty to your doorstep with expert gardening and landscaping services, tailored for every season.</p>
+      <button class="btn-primary" tabindex="5" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Your Free Quote</button>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Ever Green Gardening</h2>
+      <p>At Ever Green Gardening, we have a passion for cultivating stunning gardens that bring peace, joy, and vitality to your home or business. Our certified horticulturists and landscaping artists use sustainable practices and a deep knowledge of native plants to nurture landscapes that flourish year-round.</p>
+
+      <p>Our roots run deep in serving the New York community, where urban green spaces are vital havens amidst city life. We specialize in personalized garden designs, seasonal maintenance, eco-friendly pest control, and innovative floral arrangements that celebrate the natural vibrancy of forest and flower themes.</p>
+
+      <p>With over 20 years of experience, our experts combine artistry and science to transform your environment into a serene, flourishing garden.</p>
+      
+      <div class="img-text-block" aria-label="Illustrative garden image and text">
+        <img src="p1.png" alt="Beautiful forest garden with flowers" loading="lazy" />
+        <div>
+          <h3>Our Philosophy</h3>
+          <p>We believe every garden is a living artwork that thrives on respect for nature’s rhythms. Our team works hand-in-hand with you to choose plants that resonate with the local ecosystem and your personal style, ensuring robust growth and sustainable beauty.</p>
+        </div>
+      </div>
+
+      <p>Our commitment to continuous learning and innovation allows us to adopt the latest organic gardening techniques and environmentally responsible products, making your garden a safe haven for children, pets, and pollinators.</p>
+
+      <p>Explore our comprehensive services and discover why Ever Green Gardening is your trusted partner for a greener, happier space.</p>
+    </section>
+
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Our Gardening Services</h2>
+      <div class="services-grid" role="list" aria-label="List of gardening services">
+        <article class="card" role="listitem" tabindex="6">
+          <img src="s1.jpg" alt="Lawn maintenance service" />
+          <h3>Lawn Care & Maintenance</h3>
+          <p>Professional lawn mowing, edging, fertilization, and weed control to keep your grass healthy, thick, and vibrant throughout the year.</p>
+        </article>
+
+        <article class="card" role="listitem" tabindex="7">
+          <img src="s2.jpg" alt="Flowerbed landscaping service" />
+          <h3>Flowerbed Design & Planting</h3>
+          <p>Creative floral bed landscaping tailored for seasonal blooms that brighten your garden with vivid flower color and fresh fragrances.</p>
+        </article>
+
+        <article class="card" role="listitem" tabindex="8">
+          <img src="s3.jpg" alt="Tree trimming service" />
+          <h3>Tree & Shrub Pruning</h3>
+          <p>Expert trimming, shaping, and health assessment to ensure your trees and shrubs grow strong and maintain aesthetic appeal.</p>
+        </article>
+
+        <article class="card" role="listitem" tabindex="9">
+          <img src="s4.jpg" alt="Seasonal garden cleanup service" />
+          <h3>Seasonal Cleanup & Mulching</h3>
+          <p>Thorough removal of dead foliage, debris, and application of high-quality mulch to protect and nurture your soil through changing seasons.</p>
+        </article>
+
+        <article class="card" role="listitem" tabindex="10">
+          <img src="s5.jpg" alt="Organic pest control" />
+          <h3>Organic Pest & Weed Control</h3>
+          <p>Safe and effective natural treatments that protect your garden from pests and invasive weeds without harming beneficial insects.</p>
+        </article>
+
+        <article class="card" role="listitem" tabindex="11">
+          <img src="s6.jpg" alt="Irrigation system installation" />
+          <h3>Irrigation & Water Management</h3>
+          <p>Custom irrigation system installation and maintenance that conserves water and ensures your plants receive optimal hydration.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="additional-services" aria-labelledby="additional-services-heading">
+      <h2 id="additional-services-heading">Additional Specialized Services</h2>
+      <div class="img-text-block" aria-label="Floral arrangement service description with image">
+        <img src="a1.jpg" alt="Floral arrangement service" />
+        <div>
+          <h3>Custom Floral Arrangements</h3>
+          <p>We design and deliver bespoke floral arrangements that bring charm and life to your indoor and outdoor spaces, perfect for events or everyday enjoyment.</p>
+        </div>
+      </div>
+
+      <div class="img-text-block" aria-label="Garden consultation and planning">
+        <img src="a2.jpg" alt="Garden consultation and planning" />
+        <div>
+          <h3>Garden Consultation & Planning</h3>
+          <p>Let our experts help you design or revamp your garden with layouts, plant selection advice, and sustainable gardening practices customized to your preferences.</p>
+        </div>
+      </div>
+
+      <div class="img-text-block" aria-label="Seasonal planting and crop rotation">
+        <img src="a3.jpg" alt="Seasonal planting and crop rotation" />
+        <div>
+          <h3>Seasonal Planting & Crop Rotation</h3>
+          <p>Maximize your garden’s productivity and health with expert seasonal planting schedules and crop rotation strategies learned from years of experience.</p>
+        </div>
+      </div>
+      <p>Our team also offers specialized workshops and gardening tutorials to empower you with the knowledge to maintain your garden’s beauty and health.</p>
+    </section>
+
+    <!-- New Gallery Section -->
+    <section id="gallery" aria-labelledby="gallery-heading" role="region">
+      <h2 id="gallery-heading">Gallery of Our Garden Creations</h2>
+      <div class="gallery-grid">
+        <img src="g1.jpg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+       <img src="g2.jpg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+        <img src="g3.jpg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+        <img src="g4.jpg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+        <img src="g5.jpg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+        <img src="g6.jpg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+        <img src="g7.jpg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+        <img src="g8.jpg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+        <img src="g9.jpeg" alt="Lush forest garden with flowers" loading="lazy" tabindex="0" />
+
+
+       
+      </div>
+    </section>
+
+    <section id="pricing" aria-labelledby="pricing-heading">
+      <h2 id="pricing-heading">Services & Pricing</h2>
+      <p>We offer competitive prices with transparent service packages designed to fit diverse budgets and garden sizes. Custom quotes are available for specialized requests.</p>
+      <table aria-describedby="pricing-description">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Details</th>
+            <th>Starting Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lawn Care & Maintenance</td>
+            <td>Monthly mowing, fertilization, weed control</td>
+            <td>$90 / month</td>
+          </tr>
+          <tr>
+            <td>Flowerbed Design & Planting</td>
+            <td>Seasonal flowerbed creation and care</td>
+            <td>$350 per bed</td>
+          </tr>
+          <tr>
+            <td>Tree & Shrub Pruning</td>
+            <td>Trimming and shaping for health and aesthetics</td>
+            <td>$120 per session</td>
+          </tr>
+          <tr>
+            <td>Seasonal Cleanup & Mulching</td>
+            <td>Fall and spring debris removal and soil care</td>
+            <td>$250 per service</td>
+          </tr>
+          <tr>
+            <td>Organic Pest & Weed Control</td>
+            <td>Eco-friendly treatments for pest-free garden</td>
+            <td>$80 per visit</td>
+          </tr>
+          <tr>
+            <td>Irrigation & Water Management</td>
+            <td>Installation and winterization of systems</td>
+            <td>$500 installation</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="detailed-info" aria-labelledby="detailed-info-heading">
+      <h2 id="detailed-info-heading">Gardening Tips & In-Depth Articles</h2>
+      <article>
+        <h3>Creating a Thriving Garden Ecosystem</h3>
+        <p>A flourishing garden is more than just plants in soil; it's a vibrant, interconnected ecosystem where biodiversity thrives. A healthy garden attracts beneficial insects, birds, and microorganisms that work symbiotically to improve soil health and plant vitality. Composting, using native plants, and minimizing chemical use are key steps to foster this environment.</p>
+        <p>Learn how to assess your garden soil, prepare beds, and choose plant companions that support growth and reduce pest problems naturally.</p>
+      </article>
+      <article>
+        <h3>Seasonal Gardening Calendar for New York</h3>
+        <p>Our comprehensive calendar helps you plan your gardening year efficiently. From planting early spring bulbs to preparing your garden for winter, timely actions ensure your plants thrive. We recommend soil testing in early spring and fall mulching to retain moisture and protect roots during cold months.</p>
+        <p>We also guide you through pruning schedules and fertilization timelines so your garden looks healthy all year.</p>
+      </article>
+
+      <article>
+        <h3>Choosing the Right Flowers for Your Garden</h3>
+        <p>The selection of flowers influences not only the aesthetics but also the ecological balance of your garden. Choose a mix of perennials and annuals that bloom in succession for continuous color. Include native species to support local pollinators and reduce maintenance requirements. We suggest planting in layers — from ground covers to tall blossoms—to add depth and texture.</p>
+        <p>Our experts recommend pairing complementary colors following the natural forest palette – greens, purples, soft pinks, and yellows.</p>
+      </article>
+
+      <article>
+        <h3>Sustainable Watering Practices</h3>
+        <p>Efficient water use is vital for garden sustainability. Early morning or late evening watering reduces evaporation. Installing drip irrigation systems can deliver water directly to roots, reducing waste. Mulching retains soil moisture and prevents weeds that compete for water. Rain barrels can collect runoff for reuse, lowering utility bills and conserving groundwater.</p>
+        <p>We design water systems with your specific landscape in mind to optimize usage without compromising plant health.</p>
+      </article>
+    </section>
+
+    <section id="disclaimer" aria-label="Disclaimer" class="disclaimer">
+      <strong>Disclaimer:</strong>
+      <p>While Ever Green Gardening strives to provide the highest quality and safest gardening services, environmental factors and individual plant responses can vary widely. We cannot guarantee specific outcomes as gardens are living organisms influenced by weather, soil conditions, pests, and many other variables beyond our control.</p>
+      <p>All advice, services, and products are provided "as is" without warranties of any kind, either express or implied. Customers agree to assume all risks associated with their garden projects, and Ever Green Gardening shall not be held liable for any incidental, consequential, or indirect damages.</p>
+      <p>Prices and services mentioned on this site are subject to change without prior notice and may vary depending on garden size, location, and client requirements. It is the responsibility of the customer to provide accurate information about the property and to comply with local regulations regarding gardening and landscaping activities.</p>
+      <p>Ever Green Gardening reserves the right to refuse service in cases where safety or environmental concerns exist. Any information related to pest control and organic treatments should be considered consultative and not a substitute for professional advice or diagnosis.</p>
+      <p>By engaging our services, you accept these terms and agree to cooperate with our team to maintain a safe and healthy garden environment. For comprehensive advice tailored to your specific needs, we recommend scheduling a consultation with our certified horticulturists.</p>
+      <p>Please note: Photos and images featured on this site are for illustrative purposes only and may not represent actual services rendered.</p>
+    </section>
+
+    <section class="customer-satisfaction" aria-label="Increase Customer Satisfaction">
+      <h2>Committed to Increasing Customer Satisfaction</h2>
+      <p>Customer satisfaction is at the very core of our mission. We don’t just build gardens; we cultivate lasting relationships based on trust, transparency, and excellence. We actively seek your feedback and use it to continuously improve our services, ensuring that every interaction with Ever Green Gardening is positive and rewarding.</p>
+      <p>Our team is dedicated to delivering personalized experiences, respecting your time, preferences, and unique garden needs. We guarantee prompt responses, honest communication, and flexible scheduling to accommodate your lifestyle.</p>
+      <p>We invest in ongoing training and adopt the latest eco-friendly gardening technologies to enhance quality while protecting the environment. Our workmanship is backed by satisfaction guarantees, providing peace of mind with every project.</p>
+      <p>Through careful listening and collaboration, we tailor each garden plan to reflect your vision while incorporating sustainable practices. Our goal is to create spaces that inspire joy and relaxation for you and your loved ones.</p>
+      <p>Join the hundreds of satisfied customers who recommend Ever Green Gardening for our professionalism, attention to detail, and unwavering commitment to green excellence.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo" aria-label="Footer with contact information">
+    <p>📍 371 7th Ave, New York, NY 10001 | 📞 <a href="tel:+18446778900">+1 (844) 677-8900</a></p>
+    <p>© 2024 Ever Green Gardening. All rights reserved.</p>
+  </footer>
+</body>
+</html>

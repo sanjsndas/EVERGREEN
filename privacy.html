@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - Ever Green Gardening</title>
+  <style>
+    /* CSS Variables for Theme */
+    :root {
+      --forest-green-dark: #1b3a2f;
+      --forest-green: #2c5d3f;
+      --forest-green-light: #4a7c59;
+      --flower-pink: #e6a8b7;
+      --flower-yellow: #f0d96f;
+      --flower-light: #fff0f5;
+      --text-gray: #555753;
+      --text-muted: #6b7280;
+      --bg-light: #ffffff;
+      --rounded: 0.75rem;
+      --shadow-light: 0 4px 12px rgba(44, 93, 63, 0.12);
+      --transition-speed: 0.3s;
+      --max-width: 1200px;
+      --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      background: var(--bg-light);
+      min-height: 100vh;
+      overflow-y: scroll;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: var(--forest-green-dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-speed);
+    }
+    a:hover, a:focus {
+      color: var(--flower-pink);
+      outline: none;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      color: var(--forest-green-dark);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 3.5rem;
+      padding-top: 5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2.25rem;
+      padding-top: 4rem;
+      border-left: 5px solid var(--flower-pink);
+      padding-left: 1rem;
+      margin-top: 3rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+    }
+    p {
+      margin-bottom: 1.2rem;
+      max-width: 850px;
+      color: var(--text-muted);
+      text-align: justify;
+    }
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.6rem;
+      color: var(--text-muted);
+      list-style: disc inside;
+    }
+    li {
+      margin-bottom: 0.85rem;
+    }
+    pre {
+      background: var(--flower-light);
+      padding: 1rem 1.25rem;
+      border-radius: var(--rounded);
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    /* Header */
+    header {
+      background: var(--forest-green);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(11, 38, 20, 0.6);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-width);
+      padding: 1rem 1.5rem;
+      margin: 0 auto;
+    }
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.7rem;
+      color: var(--flower-yellow);
+      letter-spacing: 1.6px;
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+      cursor: default;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    nav .nav-links a {
+      color: var(--flower-yellow);
+      font-weight: 600;
+      padding: 0.3rem 0.6rem;
+      position: relative;
+      transition: color var(--transition-speed);
+    }
+    nav .nav-links a:hover,
+    nav .nav-links a:focus {
+      color: var(--flower-pink);
+    }
+    nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--flower-pink);
+      transition: width var(--transition-speed);
+    }
+    nav .nav-links a:hover::after,
+    nav .nav-links a:focus::after {
+      width: 100%;
+    }
+    /* Hero Section */
+    .hero {
+      max-width: var(--max-width);
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+      text-align: center;
+      color: var(--forest-green-dark);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      max-width: 640px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    /* Content Sections */
+    section {
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #eaeaea;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    section:last-child {
+      border-bottom: none;
+      padding-bottom: 5rem;
+    }
+    /* Footer */
+    footer {
+      background: var(--forest-green);
+      color: var(--flower-yellow);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 1rem;
+      user-select: none;
+      margin-top: 2rem;
+      box-shadow: inset 0 6px 12px #1b3a2f;
+    }
+    footer a {
+      color: var(--flower-pink);
+      text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 2.75rem;
+        padding-top: 3rem;
+      }
+      h2 {
+        font-size: 1.9rem;
+        padding-top: 2.5rem;
+        margin-top: 2rem;
+      }
+      h3 {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+      }
+      nav .nav-links {
+        gap: 1rem;
+      }
+      .hero p {
+        font-size: 1rem;
+        max-width: 90vw;
+      }
+      section {
+        padding-bottom: 2rem;
+      }
+      footer {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Primary Navigation">
+      <div class="logo" aria-label="Ever Green Gardening logo">Ever Green Gardening</div>
+      <div class="nav-links">
+       <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0"aria-current="page">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container" role="main" aria-label="Privacy Policy content">
+    <h1>Privacy Policy</h1>
+    <div class="hero">
+      <p>At Ever Green Gardening, your privacy is of paramount importance to us. This Privacy Policy explains what personal data we collect, how we use and protect it, and your rights as a visitor or customer. We encourage you to review this document thoroughly to understand our commitment to safeguarding your data and your choices regarding your information.</p>
+    </div>
+
+    <section id="introduction" aria-labelledby="introduction-heading">
+      <h2 id="introduction-heading">1. Introduction</h2>
+      <p>This Privacy Policy governs the manner in which Ever Green Gardening ("we," "us," "our") collects, uses, maintains, and discloses information collected from users ("you," "your," "visitor") of our website and related services. Protecting your privacy and ensuring your trust are fundamental principles guiding our operations.</p>
+      <p>By using our website or services, you agree to the terms outlined in this Policy. If you do not agree with any part of this Policy, we recommend you refrain from using our site or services until you are fully comfortable with our privacy practices.</p>
+      <p>We comply with applicable data protection legislation including but not limited to the General Data Protection Regulation (GDPR) applicable to the European Economic Area and the California Consumer Privacy Act (CCPA) where relevant. Additionally, we monitor evolving privacy norms and regulatory requirements to continuously enhance our data protection policies.</p>
+      <p>This Privacy Policy applies solely to information collected through our website, mobile applications, and other digital or physical interactions where this Privacy Policy is referenced or linked. It does not apply to information collected offline or through third-party platforms where we do not control data collection and processing.</p>
+    </section>
+
+    <section id="information-we-collect" aria-labelledby="information-we-collect-heading">
+      <h2 id="information-we-collect-heading">2. Information We Collect</h2>
+      <p>We collect various types of information, both personal and non-personal, to provide and improve our services, communicate effectively with you, and fulfill legal obligations. We categorize this information as follows:</p>
+      <h3>2.1. Personal Identification Information</h3>
+      <p>Personal identification information is data that can identify you as an individual. We collect this information only when voluntarily provided through forms, service requests, account registrations, or direct correspondence. Examples include:</p>
+      <ul>
+        <li>Full Name</li>
+        <li>Email Address</li>
+        <li>Telephone Number</li>
+        <li>Mailing or Billing Address</li>
+        <li>Payment Information (processed securely via trusted third-party gateways)</li>
+        <li>Account Credentials, if applicable</li>
+      </ul>
+      <p>We encourage you to provide accurate and current information. Failure to do so may limit our ability to provide services or communicate effectively.</p>
+      <h3>2.2. Non-Personal Identification Information</h3>
+      <p>This information cannot be used to identify individuals and is collected automatically during your interactions with our digital interfaces. Examples of such information include:</p>
+      <ul>
+        <li>Browser Type and Version</li>
+        <li>Operating System and Device Type</li>
+        <li>IP Address and Geographic Location (approximate)</li>
+        <li>Referring and Exit Pages</li>
+        <li>Date and Time Stamps of Visits and Interactions</li>
+        <li>Duration of Site Visits and Clickstream Data</li>
+      </ul>
+      <p>This data helps us monitor, analyze, and improve website functionality and user experience, track service performance, and detect anomalies or security threats.</p>
+      <h3>2.3. Cookies, Web Beacons, and Tracking Technologies</h3>
+      <p>Cookies are small data files placed on your device to enhance your browsing experience, personalize content, and collect analytics data. We also employ web beacons and similar technologies to complement cookies for these purposes.</p>
+      <p>Types of cookies used include:</p>
+      <ul>
+        <li><strong>Essential Cookies:</strong> Necessary for site operation and service delivery. Usually session cookies that expire when you close your browser.</li>
+        <li><strong>Performance and Analytics Cookies:</strong> Collect aggregated data about site usage to help us understand traffic patterns and improve performance.</li>
+        <li><strong>Functional Cookies:</strong> Remember preferences such as language or region, enhancing personalization.</li>
+        <li><strong>Targeting or Advertising Cookies:</strong> Used by third parties to deliver relevant ads based on browsing behavior. These are subject to your consent where required.</li>
+      </ul>
+      <p>You can control cookie preferences through your browser settings. Please note that disabling certain cookies may affect site functionality or limit your access to certain features.</p>
+      <p>For more information on managing cookies, visit <a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer">aboutcookies.org</a>.</p>
+    </section>
+
+    <section id="how-we-use-information" aria-labelledby="how-we-use-information-heading">
+      <h2 id="how-we-use-information-heading">3. How We Use Your Information</h2>
+      <p>The information we collect enables us to offer, tailor, and improve our gardening and landscaping services while maintaining a high standard of customer care and compliance. Specific uses include, but are not limited to:</p>
+      <ul>
+        <li><strong>Service Provision and Management:</strong> Process orders, provide support, schedule appointments, and manage accounts efficiently and transparently.</li>
+        <li><strong>Communication and Customer Care:</strong> Respond to inquiries, send updates about services, send confirmations and reminders, and communicate important policy changes.</li>
+        <li><strong>Marketing and Promotions:</strong> With your consent where applicable, send newsletters, special offers, and event invitations. You may opt out of marketing communications at any time through provided links or by contacting us directly.</li>
+        <li><strong>Personalization:</strong> Customize your experience on our website and services based on your preferences, interests, and location.</li>
+        <li><strong>Analytics and Research:</strong> Analyze aggregated data to better understand customer behavior, improve services, develop new features, and make informed business decisions.</li>
+        <li><strong>Security and Fraud Prevention:</strong> Monitor and detect suspicious activity to protect you and our company from unauthorized access or fraudulent actions.</li>
+        <li><strong>Legal and Regulatory Compliance:</strong> Fulfill legal obligations such as tax reporting, audits, law enforcement requests, and dispute resolution.</li>
+      </ul>
+      <p>We only use your data for purposes consistent with your expectations or as legally permitted. Whenever required, we will seek your explicit consent prior to using data beyond original collection purposes.</p>
+    </section>
+
+    <section id="information-sharing" aria-labelledby="information-sharing-heading">
+      <h2 id="information-sharing-heading">4. Information Sharing and Disclosure</h2>
+      <p>Ever Green Gardening respects your privacy and does not sell, rent, or trade your personal data. However, we share data with certain trusted third parties under strict confidentiality agreements to support service delivery and comply with regulations:</p>
+      <ul>
+        <li><strong>Service Providers and Vendors:</strong> We share data with payment processors, hosting providers, marketing platforms, customer support providers, and other vendors necessary for business operations.</li>
+        <li><strong>Legal and Regulatory Authorities:</strong> When legally compelled or to protect rights, safety, or property, we disclose data in response to valid subpoenas, court orders, or government investigations.</li>
+        <li><strong>Business Transfers:</strong> In events of mergers, acquisitions, or asset sales, your information may be transferred to the new entity under similar privacy commitments.</li>
+      </ul>
+      <p>We do not share personal data with advertisers or resellers unless explicitly disclosed or authorized by you. Data shared is limited to what is reasonably necessary for the intended purpose.</p>
+      <p>If you have questions about specific third parties we work with, please contact our Privacy Officer at <a href="mailto:privacy@evergreengardening.com">privacy@evergreengardening.com</a>.</p>
+    </section>
+
+    <section id="how-we-protect" aria-labelledby="how-we-protect-heading">
+      <h2 id="how-we-protect-heading">5. How We Protect Your Information</h2>
+      <p>Protecting your personal information is a critical responsibility for Ever Green Gardening. We employ comprehensive security technologies, administrative protocols, and physical safeguards to maintain the confidentiality and integrity of your data. Our security approach includes:</p>
+      <ul>
+        <li><strong>Encryption:</strong> We use strong encryption standards (TLS/SSL) to secure data transmitted between your browser and our servers.</li>
+        <li><strong>Access Controls:</strong> Employee access to personal data is restricted based on role and necessity, with logged permissions and periodic audits.</li>
+        <li><strong>Secure Storage:</strong> Data is stored using secure servers with regular vulnerability assessments and patching to prevent unauthorized access.</li>
+        <li><strong>Firewalls and Intrusion Detection:</strong> Our infrastructure is protected by enterprise-grade firewalls and continuous monitoring for suspicious activities.</li>
+        <li><strong>Training and Awareness:</strong> All staff are trained on data protection principles, confidentiality, and security best practices.</li>
+      </ul>
+      <p>While we strive for the highest security standards, no internet transmission or system can be guaranteed 100% secure. We recommend you take precautions to protect your login credentials and notify us immediately of any unauthorized access.</p>
+    </section>
+
+    <section id="cookies-policy" aria-labelledby="cookies-policy-heading">
+      <h2 id="cookies-policy-heading">6. Cookies Policy</h2>
+      <p>Cookies and tracking technologies help us deliver a seamless, personalized, and efficient user experience. Our website uses the following categories of cookies:</p>
+      <ul>
+        <li><strong>Strictly Necessary Cookies:</strong> Essential for basic site functions such as security, login sessions, and form submissions. These cookies cannot be disabled without impacting site usability.</li>
+        <li><strong>Performance/Analytics Cookies:</strong> Collect anonymized information on visitor interactions that help us improve content, design, and service offerings.</li>
+        <li><strong>Functional Cookies:</strong> Enable enhanced functionalities like remembering language preferences or user interface choices.</li>
+        <li><strong>Advertising/Targeting Cookies:</strong> Third-party cookies that deliver relevant ads relevant based on your browsing behavior. These require explicit consent where legally mandated.</li>
+      </ul>
+      <p>You can manage or block cookies using your browser settings. For comprehensive guidance, consult your browser’s help section or visit <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer">allaboutcookies.org</a>.</p>
+      <p>We also implement modern techniques compliant with global privacy regulations, such as consent banners and opt-out mechanisms, to ensure transparent cookie usage.</p>
+    </section>
+
+    <section id="your-rights" aria-labelledby="your-rights-heading">
+      <h2 id="your-rights-heading">7. Your Rights</h2>
+      <p>Depending on your jurisdiction, you may have a range of rights concerning your personal data:</p>
+      <h3>7.1. Right to Access</h3>
+      <p>You have the right to request a copy of personal data we hold about you and obtain details about how it is processed. We aim to respond to such requests promptly and in a transparent manner.</p>
+      <h3>7.2. Right to Rectification</h3>
+      <p>If you believe any personal information we hold is inaccurate or incomplete, you can request corrections or updates. Keeping your information accurate helps us serve you better.</p>
+      <h3>7.3. Right to Erasure</h3>
+      <p>You may ask us to delete your personal data in certain conditions, such as when the data is no longer necessary for the original purpose or if you withdraw consent. We may retain some information for legal or legitimate business purposes.</p>
+      <h3>7.4. Right to Restrict Processing</h3>
+      <p>You can request limitations on how we use your data, for example if you contest its accuracy or object to processing.</p>
+      <h3>7.5. Right to Object</h3>
+      <p>You may object to data processing activities based on legitimate interests or direct marketing. We will honor your preferences unless overridden by overriding legitimate grounds.</p>
+      <h3>7.6. Right to Data Portability</h3>
+      <p>You may request your data in a structured, commonly used, machine-readable format to transmit to another controller if technically feasible.</p>
+      <h3>7.7. Right to Withdraw Consent</h3>
+      <p>Where processing is based on your consent, you have the right to withdraw it anytime without affecting the lawfulness of processing prior to withdrawal.</p>
+      <h3>7.8. How to Exercise Your Rights</h3>
+      <p>To exercise any of your rights, please contact us at <a href="mailto:privacy@evergreengardening.com">privacy@evergreengardening.com</a>. We may ask you to verify your identity before processing requests to protect your privacy.</p>
+      <p>For residents of the European Economic Area and California, specific legal protections apply and you have the right to lodge complaints with your relevant data protection authority.</p>
+    </section>
+
+    <section id="children-privacy" aria-labelledby="children-privacy-heading">
+      <h2 id="children-privacy-heading">8. Children’s Privacy</h2>
+      <p>Our services are not directed to children under the age of 16. We do not knowingly collect personal information from children without verifiable parental consent. Protecting children's online privacy is particularly important to us.</p>
+      <p>If you suspect your child has provided us with personal information, please contact us immediately so that we can take appropriate steps to delete such data and prevent further collection.</p>
+      <p>We encourage parents and guardians to monitor their children's online activities and educate them about internet safety.</p>
+    </section>
+
+    <section id="third-party-sites" aria-labelledby="third-party-sites-heading">
+      <h2 id="third-party-sites-heading">9. Third-Party Websites</h2>
+      <p>Our website may contain links to third-party websites, services, or resources not operated or controlled by Ever Green Gardening.</p>
+      <p>We are not responsible for the privacy practices, content, or security of such external sites. We encourage you to read the privacy statements of each site you visit.</p>
+      <p>Some third-party providers may collect information via cookies or other technologies on their platforms independently.</p>
+    </section>
+
+    <section id="international-transfers" aria-labelledby="international-transfers-heading">
+      <h2 id="international-transfers-heading">10. International Data Transfers</h2>
+      <p>Your data may be transferred to, stored, or processed in countries outside your country of residence, including the United States. Some of these countries may not have data protection laws equivalent to those in your jurisdiction.</p>
+      <p>We take appropriate safeguards, such as standard contractual clauses and strict vendor assessments, to ensure your data remains protected in accordance with this Privacy Policy and applicable laws.</p>
+      <p>If you are located in the European Economic Area or other regions with specific data transfer restrictions, please contact us for additional information.</p>
+    </section>
+
+    <section id="data-retention" aria-labelledby="data-retention-heading">
+      <h2 id="data-retention-heading">11. Data Retention</h2>
+      <p>We retain your personal data only as long as necessary to fulfill the purposes outlined in this Privacy Policy, including compliance with legal, regulatory, or internal policy obligations.</p>
+      <p>Specific retention periods depend on the type of data and the purpose for processing. For example, transaction records may be kept for tax and accounting requirements for a minimum period prescribed by law.</p>
+      <p>When data is no longer needed, we will securely delete or anonymize it.</p>
+    </section>
+
+    <section id="policy-changes" aria-labelledby="policy-changes-heading">
+      <h2 id="policy-changes-heading">12. Changes to This Privacy Policy</h2>
+      <p>We periodically review and update this Privacy Policy to reflect legal and operational changes or to enhance our transparency.</p>
+      <p>We encourage you to revisit this page regularly to stay informed about how we collect, use, and protect your information.</p>
+      <p>If material changes are made, we will provide prominent notices via website banners, emails, or other appropriate communication channels.</p>
+      <p>Your continued use of Ever Green Gardening services following any changes means you accept the updated Privacy Policy.</p>
+    </section>
+
+    <section id="contact-us" aria-labelledby="contact-us-heading">
+      <h2 id="contact-us-heading">13. Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please do not hesitate to contact us. Our privacy team is committed to resolving issues and assisting you promptly.</p>
+      <address>
+        Ever Green Gardening<br />
+        371 7th Ave, New York, NY 10001<br />
+        Phone: <a href="tel:+18446778900">+1 (844) 677-8900</a><br />
+        Email: <a href="mailto:privacy@evergreengardening.com">privacy@evergreengardening.com</a>
+      </address>
+      <p>We appreciate your trust in Ever Green Gardening and are dedicated to ensuring your privacy is respected and protected at every step.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo" aria-label="Footer with contact information">
+    <p>📍 371 7th Ave, New York, NY 10001 | 📞 <a href="tel:+18446778900">+1 (844) 677-8900</a></p>
+    <p>© 2024 Ever Green Gardening. All rights reserved.</p>
+  </footer>
+</body>
+</html>
